@@ -398,6 +398,51 @@ python -m scripts.validate_paths paths.npy --map empty-32-32 --k 10 --check_goal
 python -m scripts.playback_paths --map empty-32-32 --paths paths.npy --k 10 --out results/demo.gif --fps 6
 ```
 
+### Running MAPF Demos on Multiple Maps
+
+Generate visualization GIFs for multiple maps with many agents using random movement:
+
+```bash
+# Activate conda environment
+conda activate mapf
+
+# Run demos on multiple maps
+bash run_mapf_demos.sh
+```
+
+Or run directly:
+```bash
+PYTHONPATH=. python scripts/run_mapf_demos.py \
+    --maps warehouse-20-40-10-2-2 room-64-64-8 random-64-64-10 maze-128-128-2 ht_mansion_n \
+    --k 50 \
+    --fps 5 \
+    --results_dir results
+```
+
+## Visualization Examples
+
+Here are example visualizations of multi-agent path finding on different maps:
+
+### Warehouse Map
+![Warehouse Map Demo](results/warehouse-20-40-10-2-2_demo.gif)
+*50 agents moving randomly on warehouse-20-40-10-2-2 map*
+
+### Room Map
+![Room Map Demo](results/room-64-64-8_demo.gif)
+*50 agents moving randomly on room-64-64-8 map*
+
+### Random Map
+![Random Map Demo](results/random-64-64-10_demo.gif)
+*50 agents moving randomly on random-64-64-10 map*
+
+### Maze Map
+![Maze Map Demo](results/maze-128-128-2_demo.gif)
+*50 agents moving randomly on maze-128-128-2 map*
+
+### Mansion Map
+![Mansion Map Demo](results/ht_mansion_n_demo.gif)
+*50 agents moving randomly on ht_mansion_n map*
+
 ## License
 
 See LICENSE file for details.
